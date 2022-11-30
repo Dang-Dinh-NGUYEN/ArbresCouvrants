@@ -1,6 +1,6 @@
 import java.util.*;
 
-//parcours en largeur (version normal et version aléatoire)
+//parcours en largeur
 public class BreadthFirstSearch {
 
 	Graph graph;
@@ -39,34 +39,4 @@ public class BreadthFirstSearch {
 		algo.bfs(root);
 		return algo.tree;
 	}
-
-	/*********************************************** Random Walker ****************************************************/
-	private void random_push(int vertex) {
-		/* ajouter les arcs sortants d'un sommet dans la frontier en ordre aléatoire */
-		Collections.shuffle(graph.outNeighbours(vertex));
-		for (Arc arc : graph.outNeighbours(vertex)) frontier.offer(arc);
-	}
-
-	private void random_explore(Arc nextArc) {
-		if (reached.get(nextArc.getDest())) return;
-		reached.set(nextArc.getDest());
-		tree.add(nextArc);
-		random_push(nextArc.getDest());
-	}
-
-	private void random_bfs(int startingVertex) {
-		reached.set(startingVertex);
-		push(startingVertex);
-		while (!frontier.isEmpty()) {
-			random_explore(frontier.poll());
-		}
-	}
-
-	public static ArrayList<Arc> generateTreeAtRandom(Graph graph) {
-		BreadthFirstSearch algo = new BreadthFirstSearch(graph);
-		int root = new Random().nextInt(graph.order);
-		algo.random_bfs(root);
-		return algo.tree;
-	}
-
 }

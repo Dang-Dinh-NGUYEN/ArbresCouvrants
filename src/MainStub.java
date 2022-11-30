@@ -15,19 +15,23 @@ public class MainStub {
 	public static ArrayList<Edge> genTree(Graph graph) {
 		ArrayList<Edge> randomTree;
 		
-		// TOOO : modifier l'algorithme utiliser ici.
+		// TOOO : modifier l'algorithme utiliser ici. un algorithme par fois!
 		
 		/* Non-random BFS */
 		//ArrayList<Arc> randomArcTree = BreadthFirstSearch.generateTree(graph,0);
 
 		/* random BFS */
-		ArrayList<Arc> randomArcTree = BreadthFirstSearch.generateTreeAtRandom(graph);
+		//ArrayList<Arc> randomArcTree = RandomSearch.generateTree(graph,0);
 
 		/* Algorithme d'Aldous-Broder */
 		//ArrayList<Arc> randomArcTree = AldousBroder.generateTree(graph);
 
 		/* Arbre couvrant de poids minimum en utilisant l'algorithme de Prim */
-		//ArrayList<Arc> randomArcTree = MinSpanningTree.generateTree(graph,0);
+		ArrayList<Arc> randomArcTree = MinSpanningTree.generateTreePrim(graph,0);
+
+		/* Arbre couvrant de poids minimum en utilisant l'algorithme de Dijkstra */
+		//ArrayList<Arc> randomArcTree = MinSpanningTree.generateTreeDijskstra(graph,0);
+
 
 		randomTree = new ArrayList<>();
 		for (Arc a : randomArcTree) randomTree.add(a.support);

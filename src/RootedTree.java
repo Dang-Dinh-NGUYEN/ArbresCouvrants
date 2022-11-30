@@ -183,7 +183,7 @@ public class RootedTree {
 		return nodes[vertex].height;
 	}
 	
-	public int getDepth(int vertex) {
+	public int getDepth(int vertex){
 		return nodes[vertex].depth;
 	}
 	
