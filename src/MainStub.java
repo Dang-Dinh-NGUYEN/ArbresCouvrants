@@ -27,11 +27,12 @@ public class MainStub {
 		//ArrayList<Arc> randomArcTree = AldousBroder.generateTree(graph);
 
 		/* Arbre couvrant de poids minimum en utilisant l'algorithme de Prim */
-		ArrayList<Arc> randomArcTree = MinSpanningTree.generateTreePrim(graph,0);
+		//MinSpanningTree minSpanningTree = new Prim(graph);
+		//ArrayList<Arc> randomArcTree = minSpanningTree.generateTree(graph,0);
 
-		/* Arbre couvrant de poids minimum en utilisant l'algorithme de Dijkstra */
-		//ArrayList<Arc> randomArcTree = MinSpanningTree.generateTreeDijskstra(graph,0);
-
+		/* Algorithme de Kruskal */
+		MinSpanningTree minSpanningTree = new Kruskal(graph);
+		ArrayList<Arc> randomArcTree = minSpanningTree.generateTree(graph,0);
 
 		randomTree = new ArrayList<>();
 		for (Arc a : randomArcTree) randomTree.add(a.support);
