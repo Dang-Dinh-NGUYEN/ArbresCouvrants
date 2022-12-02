@@ -30,9 +30,14 @@ public class MainStub {
 		//MinSpanningTree minSpanningTree = new Prim(graph);
 		//ArrayList<Arc> randomArcTree = minSpanningTree.generateTree(graph,0);
 
-		/* Algorithme de Kruskal */
-		MinSpanningTree minSpanningTree = new Kruskal(graph);
-		ArrayList<Arc> randomArcTree = minSpanningTree.generateTree(graph,0);
+		/* Arbre couvrant de poids minimum en utilisant l'algorithme de Kruskal */
+		//MinSpanningTree minSpanningTree = new Kruskal(graph);
+		//ArrayList<Arc> randomArcTree = minSpanningTree.generateTree(graph,0);
+
+		/* Arbre couvrant par insertion aléatoire d'arêtes */
+		ArrayList<Arc> randomArcTree = RandomInsert.generateTree(graph,0);
+
+
 
 		randomTree = new ArrayList<>();
 		for (Arc a : randomArcTree) randomTree.add(a.support);

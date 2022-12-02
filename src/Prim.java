@@ -43,6 +43,7 @@ public class Prim implements MinSpanningTree{
 
     public Prim (Graph graph) {
         this.graph = graph;
+        /* Attribuer à chaque arête un poids aléatoire */
         Iterator<Edge> iterator = this.graph.iterator();
         while(iterator.hasNext()){
             Edge currentEdge = iterator.next();
