@@ -35,8 +35,10 @@ public class MainStub {
 		//ArrayList<Arc> randomArcTree = minSpanningTree.generateTree(graph,0);
 
 		/* Arbre couvrant par insertion aléatoire d'arêtes */
-		ArrayList<Arc> randomArcTree = RandomInsert.generateTree(graph,0);
+		//ArrayList<Arc> randomArcTree = RandomInsert.generateTree(graph,0);
 
+		/* Arbre couvrant en utilisant l'algorithme de Wilson */
+		ArrayList<Arc> randomArcTree = Wilson.generateTree(graph);
 
 
 		randomTree = new ArrayList<>();
