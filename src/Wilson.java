@@ -24,7 +24,7 @@ public class Wilson {
         visitedVertex.add(vertex);
         while(!reached.contains(vertex)) {
             Arc next_edge = graph.outNeighbours(vertex).get(random.nextInt(graph.outNeighbours(vertex).size()));
-            /* vérifier si il y a un cycle. Si oui, supprimer les arcs dans ce cycle */
+            /* vérifier s'il y a un cycle. Si oui, supprimer les arcs dans ce cycle */
             if(visitedVertex.contains(next_edge.getSource())){
                 for(int i = visitedVertex.indexOf(next_edge.getSource()); i < visitedVertex.size(); i++){
                     path[visitedVertex.get(i)] = null;

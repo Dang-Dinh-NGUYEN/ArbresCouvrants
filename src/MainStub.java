@@ -21,7 +21,7 @@ public class MainStub {
 		//ArrayList<Arc> randomArcTree = BreadthFirstSearch.generateTree(graph,0);
 
 		/* random BFS */
-		//ArrayList<Arc> randomArcTree = RandomSearch.generateTree(graph,0);
+		ArrayList<Arc> randomArcTree = RandomSearch.generateTree(graph,0);
 
 		/* Algorithme d'Aldous-Broder */
 		//ArrayList<Arc> randomArcTree = AldousBroder.generateTree(graph);
@@ -38,7 +38,7 @@ public class MainStub {
 		//ArrayList<Arc> randomArcTree = RandomInsert.generateTree(graph,0);
 
 		/* Arbre couvrant en utilisant l'algorithme de Wilson */
-		ArrayList<Arc> randomArcTree = Wilson.generateTree(graph);
+		//ArrayList<Arc> randomArcTree = Wilson.generateTree(graph);
 
 
 		randomTree = new ArrayList<>();

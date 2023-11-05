@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Kruskal implements MinSpanningTree{
+public class Kruskal extends SubSet implements MinSpanningTree{
     Graph graph;
     ArrayList<Arc> tree;
     List<Edge> frontier;
@@ -17,30 +17,6 @@ public class Kruskal implements MinSpanningTree{
         }
         Collections.sort(frontier);
         this.tree = new ArrayList<>(graph.order);
-    }
-
-    private class SubSet{
-        int parent,rank;
-    }
-
-    private int find(SubSet SubSets[], int i) {
-        if (SubSets[i].parent != i)
-            SubSets[i].parent = find(SubSets, SubSets[i].parent);
-        return SubSets[i].parent;
-    }
-
-    private void Union(SubSet SubSets [], int x, int y) {
-        int xroot = find(SubSets , x);
-        int yroot = find(SubSets , y);
-
-        if (SubSets [xroot].rank < SubSets [yroot].rank)
-            SubSets [xroot].parent = yroot;
-        else if (SubSets [xroot].rank > SubSets [yroot].rank)
-            SubSets [yroot].parent = xroot;
-        else {
-            SubSets [yroot].parent = xroot;
-            SubSets [xroot].rank++;
-        }
     }
 
     private void execute(){
